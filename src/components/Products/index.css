@@ -1,0 +1,44 @@
+.product-section{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 2rem;
+}
+.filter-cart-section{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    /* background: red; */
+}
+.card-span{
+    padding-right: 2rem;
+    position: relative;
+}
+.card-span .cart-logo{
+    font-size: 2rem;
+    color: rgb(71, 126, 209);
+}
+.card-span span{
+    position: absolute;
+    left: 10%;
+    top: -30%;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: rgb(47, 252, 6);
+}
+.product-display-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pro-lists{
+    display:flex;
+    flex-wrap: wrap;
+    background-color: blue;
+    width: 100%;
+    list-style-type: none;
+    padding-left: 0px;
+}
+.product-card-list{
+    background-color: aliceblue;
+    margin: 1.2rem;
+}
