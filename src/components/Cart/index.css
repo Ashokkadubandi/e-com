@@ -1,0 +1,7 @@
+.cart-section{
+    padding-top: 1rem;
+    padding-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

@@ -1,4 +1,5 @@
 import {Link} from 'react-router-dom'
+import { FaShopify } from "react-icons/fa";
 import './index.css'
 
 const Header = () => {
@@ -6,11 +7,14 @@ const Header = () => {
 
     return (
         <header>
-            <h1>A</h1>
+            <div className='logo-con-ea'>
+            <FaShopify/>
+            <h1>EH</h1>
+            </div>
             <nav>
-                <Link to='/'>Home</Link>
-                <Link to='/products'>Products</Link>
-                <Link to='/cart'>Cart</Link>
+                <Link className='links' to='/'>Home</Link>
+                <Link className='links' to='/products'>Products</Link>
+                <Link className='links' to='/cart'>Cart</Link>
             </nav>
         </header>
     )

@@ -1,5 +1,7 @@
 import {useEffect,useState} from 'react'
 import { FaShoppingCart } from "react-icons/fa";
+import EasyHome from '../../Cotext/cart';
+import Spinner from 'react-bootstrap/Spinner';
 import './index.css'
 
 const products = [{category:'audio',name:'Audio'},
@@ -48,19 +50,54 @@ const Products = () => {
 
     }
 
-    const renderLoader = () => <p>Processing....</p>
+    const renderLoader = () => (
+        <Spinner animation="border" variant="primary" />
+        
+    )
+    
+    const renderData = () => (
+        <EasyHome.Consumer>
+            {value => {
+                const {cartUpdating,cartList} = value
 
-    const renderData = () => {
-        return (
-            <ul className='pro-lists'>
-                {categoryData.map(each => (
-                    <li key={each.id} className='product-card-list'>
-                        <p>{each.category}</p>
-                    </li>
-                ))}
-            </ul>
-        )
-    }
+                const updateCartSection = (data) => {
+                    let isAdd = cartList.filter(each => each.id === data.id)
+                    console.log(isAdd.length,'yes or no',typeof isAdd)
+                    if(isAdd.length === 0){
+                        cartUpdating(data)
+                    }
+                }
+
+                return (
+                    <ul className='pro-lists'>
+                        {categoryData.map(each =>{
+                            const {price,discount} = each
+                            const actualPrice = price + (price * (discount / 100) )
+                        return (
+                            <li key={each.id} className='product-card-list'>
+                                <img src={each.image} alt={each.id}/>
+                                <div className='text-section-product'>
+                                    <h3>{each.brand}<span>{each.model}</span></h3>
+                                    <p className='title'>{each.title}</p>
+                                    <div className='price-sec'>
+                                        <span className='price'>{actualPrice}</span>
+                                        <h1>{price}$<span>{discount}% off</span></h1>
+                                        {/* <h2>{actualPrice}</h2>
+                                        <h1>{each.price}</h1>
+                                        <h3>{discount}%off</h3> */}
+                                    </div>
+                                    <div className='add-cart-buy'>
+                                            <button className='add-cart' onClick={() => updateCartSection(each)}>Add to cart</button>
+                                            <button className='buy-now'>Buy now</button>
+                                        </div>
+                                </div>
+                            </li>
+                        )})}
+                    </ul>
+                )
+            }}
+        </EasyHome.Consumer>
+    )
 
     const renderFailure = () => <p>Data rendering Fail</p>
 
@@ -86,7 +123,18 @@ const Products = () => {
                 <div className='card-span'>
                     {/* cart icon and no of carts */}
                     <FaShoppingCart className='cart-logo'/>
-                    <span>1</span>
+                    <span>
+                        <EasyHome.Consumer>
+                            {value => {
+                                const {cartList} = value
+                                return (
+                                    <div className='cart-count'>
+                                        <span>{cartList.length}</span>
+                                    </div>
+                                )
+                            }}
+                        </EasyHome.Consumer>
+                    </span>
 
                 </div>
                 <div className='filters-section'>
