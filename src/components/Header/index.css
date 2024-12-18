@@ -54,5 +54,29 @@
 }
 .small-device nav{
     position: absolute;
-    right: -450px;
+    top: 0;
+    right: -500px;
+    transition: 0.1s;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+.small-device nav .links{
+    padding: 1.5rem;
+}
+.small-device .nav-shown{
+    right: -30px;
+}
+.hamburger{
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    transition: 0.1s;
+    border-width: 0px;
+    background-color: transparent;
+    font-size: 1.5rem;
+    color: rgb(110, 110, 153);
+}
+.ham-anim{
+    top: -30px;
 }

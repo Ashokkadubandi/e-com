@@ -8,6 +8,12 @@
     width: 100%;
     position: absolute;
 }
+@media(max-width:565px){
+    .home-con img{
+        height: 100%;
+        width: 100%;
+    }
+}
 .text-container{
     position: absolute;
     top: 5%;
@@ -30,10 +36,12 @@
     font-size: 1.2rem;
     width: 400px;
     line-height: 1.5;
+    overflow: hidden;
 }
 @media(max-width:565px){
     .text-container p{
-        font-size: 0.5rem;
+        font-size: 1rem;
+        width: 300px;
     }
 }
 .text-container .btn-prime{

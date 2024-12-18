@@ -1,10 +1,17 @@
+import { useState } from 'react';
 import {Link} from 'react-router-dom'
 import { FaShopify } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { IoMdClose } from "react-icons/io";
 import './index.css'
 
 const Header = () => {
     console.log('router')
+    const [navAnimate,setNavAnimate] = useState(false)
+
+    const animate = navAnimate ? 'nav-shown' : ''
+    const hamAnim = navAnimate ?  'ham-anim' : ''
+
 
     return (
         <>
@@ -19,10 +26,10 @@ const Header = () => {
                 <Link className='links' to='/cart'>Cart</Link>
             </nav>
             <div className='small-device'>
-                <button className='hamburger'>
-                    <GiHamburgerMenu/>
+                <button className={`hamburger ${hamAnim}`} onClick={() => setNavAnimate(pre => !pre)}>
+                    {navAnimate ? <IoMdClose/> : <GiHamburgerMenu/>}
                 </button>
-                <nav>
+                <nav className={`${animate}`}>
                     <Link className='links' to='/'>Home</Link>
                     <Link className='links' to='/products'>Products</Link>
                     <Link className='links' to='/cart'>Cart</Link>
