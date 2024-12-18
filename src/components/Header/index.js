@@ -5,8 +5,8 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
 import './index.css'
 
-const Header = () => {
-    console.log('router')
+const Header = (props) => {
+    console.log(props)
     const [navAnimate,setNavAnimate] = useState(false)
 
     const animate = navAnimate ? 'nav-shown' : ''
@@ -30,9 +30,12 @@ const Header = () => {
                     {navAnimate ? <IoMdClose/> : <GiHamburgerMenu/>}
                 </button>
                 <nav className={`${animate}`}>
-                    <Link className='links' to='/'>Home</Link>
-                    <Link className='links' to='/products'>Products</Link>
-                    <Link className='links' to='/cart'>Cart</Link>
+                    <Link className='links' to='/' 
+                    onClick={() => setNavAnimate(false)}>Home</Link>
+                    <Link className='links' to='/products' 
+                    onClick={() => setNavAnimate(false)}>Products</Link>
+                    <Link className='links' to='/cart' 
+                    onClick={() => setNavAnimate(false)}>Cart</Link>
                 </nav>
             </div>
         </header>
