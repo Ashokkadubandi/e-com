@@ -63,7 +63,7 @@ const Products = () => {
 
                 const updateCartSection = (data) => {
                     let isAdd = cartList.filter(each => each.id === data.id)
-                    console.log(isAdd.length,'yes or no',typeof isAdd)
+                    // console.log(isAdd.length,'yes or no',typeof isAdd)
                     if(isAdd.length === 0){
                         cartUpdating(data)
                     }
@@ -151,7 +151,7 @@ const Products = () => {
                 </div>
 
             </div>
-            <h1>{activateCategory.toLocaleUpperCase()}</h1>
+            <h1 className='product-head'>{activateCategory.toLocaleUpperCase()}</h1>
             <div className='product-display-section'>
                 {renderOnApiStatus()}
             </div>

@@ -2,19 +2,28 @@
     padding-left: 1rem;
     padding-right: 1rem;
     padding-top: 2rem;
+    /* background: red; */
+    overflow-x: hidden;
 }
 .filter-cart-section{
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    position: sticky;
+    position: fixed;
     top: 10%;
-    /* background: red; */
+    right: 1%;
+}
+@media(max-width:565px){
+    .filter-cart-section{
+        top: 12%;
+    }
 }
 .card-span{
     padding-right: 2rem;
     position: relative;
+    /* background: red; */
 }
+
 .card-span .cart-logo{
     font-size: 2.5rem;
     color: rgb(145, 185, 245);
@@ -40,6 +49,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    /* background-color: red; */
 }
 .pro-lists{
     display:flex;
@@ -52,13 +62,22 @@
 }
 .product-link-adjust{
     text-decoration: none;
-    background-color: red;
     width: 30%;
+}
+@media(max-width:565px){
+    .product-link-adjust{
+        width: 50%;
+    }
 }
 .image-product{
     height: 100%;
     width: 100%;
-
+}
+@media(max-width:565px){
+    .image-product{
+        height: 50%;
+        width: 95%;
+    }
 }
 .product-card-list{
     background-color: aliceblue;
