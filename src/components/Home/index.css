@@ -1,7 +1,7 @@
 .home-con{
     height: 100vh;
     position: relative;
-
+    width: 100%;
 }
 .home-con img{
     height: 100%;
@@ -14,6 +14,11 @@
     left: 10%;
     width: 50%;
 }
+@media(max-width:565px){
+    .text-container{
+        left: 5%;
+    }
+}
 .text-container h1{
     color: rgb(255, 255, 255);
     font-size: 2rem;
@@ -25,6 +30,11 @@
     font-size: 1.2rem;
     width: 400px;
     line-height: 1.5;
+}
+@media(max-width:565px){
+    .text-container p{
+        font-size: 0.5rem;
+    }
 }
 .text-container .btn-prime{
     background-color: rgb(6, 167, 241);

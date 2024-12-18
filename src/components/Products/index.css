@@ -50,19 +50,27 @@
     list-style-type: none;
     padding-left: 0px;
 }
+.product-link-adjust{
+    text-decoration: none;
+    background-color: red;
+    width: 30%;
+}
+.image-product{
+    height: 100%;
+    width: 100%;
+
+}
 .product-card-list{
     background-color: aliceblue;
     display: flex;
     margin: 1.2rem;
     width: 100%;
 }
-.product-card-list img{
-    height: 100%;
-    width: 30%;
-}
 .text-section-product{
     padding-left: 1rem;
     padding-top: 2rem;
+    width: 70%;
+
 }
 .text-section-product h3{
     color: rgb(27, 27, 27);

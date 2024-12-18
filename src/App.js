@@ -5,6 +5,7 @@ import Products from './components/Products'
 import Cart from './components/Cart'
 import Header from './components/Header';
 import EasyHome from './Cotext/cart';
+import ProductDetail from './components/productDetail';
 import './App.css'
 
 
@@ -27,11 +28,12 @@ function App(){
     value={{cartList,cartUpdating,removeData}}
     >
     <Header/>
-    <div className='body-sec'>
+    <div className='body-sec'> 
     <Switch>
         <Route exact path='/' component={Home}/>
         <Route exact path='/products' component={Products}/>
         <Route exact path='/cart' component={Cart}/>
+        <Route exact path='/product/:id' component={ProductDetail}/>
       </Switch>
     </div>
     </EasyHome.Provider>

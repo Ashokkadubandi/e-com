@@ -1,4 +1,5 @@
 import {useEffect,useState} from 'react'
+import { Link } from 'react-router-dom';
 import { FaShoppingCart } from "react-icons/fa";
 import EasyHome from '../../Cotext/cart';
 import Spinner from 'react-bootstrap/Spinner';
@@ -54,7 +55,7 @@ const Products = () => {
         <Spinner animation="border" variant="primary" />
         
     )
-    
+
     const renderData = () => (
         <EasyHome.Consumer>
             {value => {
@@ -71,11 +72,13 @@ const Products = () => {
                 return (
                     <ul className='pro-lists'>
                         {categoryData.map(each =>{
-                            const {price,discount} = each
+                            const {price,discount,id} = each
                             const actualPrice = price + (price * (discount / 100) )
                         return (
-                            <li key={each.id} className='product-card-list'>
-                                <img src={each.image} alt={each.id}/>
+                                <li key={each.id} className='product-card-list'>
+                                    <Link className='product-link-adjust' to={`/product/${id}`}>
+                                        <img className='image-product' src={each.image} alt={each.id}/>
+                                    </Link>
                                 <div className='text-section-product'>
                                     <h3>{each.brand}<span>{each.model}</span></h3>
                                     <p className='title'>{each.title}</p>
@@ -92,6 +95,7 @@ const Products = () => {
                                         </div>
                                 </div>
                             </li>
+                            
                         )})}
                     </ul>
                 )

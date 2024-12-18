@@ -1,4 +1,4 @@
-header{
+.large-header{
     position: fixed; 
     left: 0;
     right: 0;
@@ -28,13 +28,31 @@ header{
     top: -10px;
 }
 
-header nav{
+.large-device{
     width: 50%;
     display: flex;
     justify-content: space-around;
+}
+@media(max-width:565px){
+    .large-device{
+        display: none;
+    }
 }
 .links{
     text-decoration: none;
     color: rgb(22, 22, 22);
     font-weight: bold;
+}
+.small-device{
+    position: relative;
+    display: flex;
+}
+@media(min-width:565px){
+    .small-device{
+        display: none;
+    }
+}
+.small-device nav{
+    position: absolute;
+    right: -450px;
 }
