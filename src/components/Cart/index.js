@@ -16,15 +16,15 @@ const Cart = () => (
             )
 
             const renderCartData = () => (
-                <ul className='pro-lists'>
+                <ul className='cart-list'>
                 {cartList.map(each =>{
                     const {price,discount} = each
                     const actualPrice = price + (price * (discount / 100) )
 
                 return (
-                    <li key={each.id} className='product-card-list'>
+                    <li key={each.id} className='add-cart-list'>
                         <img src={each.image} alt={each.id}/>
-                        <div className='text-section-product'>
+                        <div className='text-section-cart'>
                             <h3>{each.brand}<span>{each.model}</span></h3>
                             <p className='title'>{each.title}</p>
                             <div className='price-sec'>

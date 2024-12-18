@@ -64,6 +64,8 @@
     .pro-lists{
         flex-direction: column;
         align-items: center;
+        overflow-x: hidden;
+        /* background-color: red; */
     }
 }
 .product-link-adjust{
@@ -97,6 +99,7 @@
         box-shadow: 12px 12px 50px black;
         padding-top: 1rem;
         padding-bottom: 2rem;
+        overflow-x: hidden;
     }
 }
 .text-section-product{
