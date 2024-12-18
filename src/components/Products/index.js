@@ -2,7 +2,7 @@ import {useEffect,useState} from 'react'
 import { Link } from 'react-router-dom';
 import { FaShoppingCart } from "react-icons/fa";
 import EasyHome from '../../Cotext/cart';
-import Spinner from 'react-bootstrap/Spinner';
+// import Spinner from 'react-bootstrap/Spinner';
 import './index.css'
 
 const products = [{category:'audio',name:'Audio'},
@@ -52,7 +52,7 @@ const Products = () => {
     }
 
     const renderLoader = () => (
-        <Spinner animation="border" variant="primary" />
+        <h1>Loading....</h1>
         
     )
 
